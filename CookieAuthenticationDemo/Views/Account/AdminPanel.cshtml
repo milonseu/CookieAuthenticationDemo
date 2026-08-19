@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <h1>
+                Admin Panel
+            </h1>
+
+            <hr />
+
+            <div class="alert alert-success">
+
+                You are an Admin.
+
+            </div>
+
+            <p>
+                শুধুমাত্র Admin role-এর user এই page দেখতে পারবে।
+            </p>
+
+
+            <a asp-controller="Account"
+               asp-action="Dashboard"
+               class="btn btn-primary">
+
+                Back to Dashboard
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <h1>
+                Dashboard
+            </h1>
+
+            <hr />
+
+            <h4>
+                Welcome,
+                @User.Identity?.Name
+            </h4>
+
+
+            <p>
+                You are successfully logged in.
+            </p>
+
+
+            <p>
+                <strong>Email:</strong>
+                @User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value
+            </p>
+
+
+            <p>
+                <strong>Role:</strong>
+                @User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value
+            </p>
+
+
+            <div class="mt-4">
+
+                <a asp-controller="Account"
+                   asp-action="AdminPanel"
+                   class="btn btn-success">
+
+                    Go to Admin Panel
+
+                </a>
+
+
+                <form asp-controller="Account"
+                      asp-action="Logout"
+                      method="post"
+                      style="display:inline;">
+
+                    <button type="submit"
+                            class="btn btn-danger">
+
+                        Logout
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
